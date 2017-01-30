@@ -1,6 +1,6 @@
 {
   "presets": [
-    "latest", "stage-1", "react"
+    [ "latest", { "modules": false } ], "stage-1", "react"
   ],
   "plugins": [
     "transform-decorators-legacy"
