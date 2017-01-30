@@ -36,7 +36,7 @@
   },
   "scripts": {
     "build": "babel src/index.js -o build/index.js",
-    "open:src": "webpack --verbose --config webpack.config.dev.js",
+    "open:src": "webpack  --config webpack.config.dev.js",
     "lint": "esw webpack.config.* src buildScripts --color",
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
