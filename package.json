@@ -22,10 +22,12 @@
     "eslint": "^3.14.1",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-react": "^6.9.0",
+    "html-webpack-plugin": "^2.28.0",
     "localtunnel": "1.8.2",
     "mocha": "^3.2.0",
     "nsp": "2.6.2",
-    "webpack": "^2.2.0"
+    "webpack": "^2.2.0",
+    "webpack-dev-server": "^2.3.0"
   },
   "dependencies": {
     "mobx": "^2.6.2",
@@ -35,8 +37,8 @@
     "react-router": "^3.0.0"
   },
   "scripts": {
-    "build": "babel src/index.js -o build/index.js",
-    "open:src": "webpack  --config webpack.config.dev.js",
+    "build": "webpack  --config webpack.config.dev.js",
+    "open:src": "webpack-dev-server --config webpack.config.dev.js --watch",
     "lint": "esw webpack.config.* src buildScripts --color",
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
