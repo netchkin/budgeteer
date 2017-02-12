@@ -2,13 +2,11 @@ import React, {Component} from 'react';
 import ExpenseList from './ExpenseList';
 
 class Expenses extends Component {
-  foo = () => {
-    alert(1);
-  }
-
   handleAddExpense = () => {
-    this.foo();
-    this.props.store.addExpense(this.refs.txtExpense.value);
+    this.props.store.addExpense({
+      title: this.refs.txtExpenseDescription.value,
+      value: this.refs.txtExpenseAmount.value
+    });
   }
 
   render() {
