@@ -1,11 +1,16 @@
 import React, {Component} from 'react';
+
+import DevTools from 'mobx-react-devtools';
+
 //import logo from './logo.svg';
 
 import AppBar from './Components/AppBar';
 import ExpenseReports from './Components/ExpenseReports';
 import Expenses from './Components/Expenses';
 import Panel from './Components/Panel';
-import observableExpenseStore from './Stores/ObservableExpenseStore';
+import ObservableExpenseStore from './Stores/ObservableExpenseStore';
+
+const observableExpenseStore = new ObservableExpenseStore();
 
 class App extends Component {
   render() {
@@ -20,6 +25,7 @@ class App extends Component {
         <Panel>
           <ExpenseReports />
         </Panel>
+        <DevTools />
       </div>
     )
   }

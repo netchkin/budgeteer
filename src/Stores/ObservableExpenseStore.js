@@ -1,19 +1,22 @@
-import {observable, computed} from 'mobx';
+// @flow
+
+import {observable, IMapEntries, map } from 'mobx';
+
+// TODO: export?
+type Expense = { title: string, value: number, id: string };
 
 class ObservableExpenseStore {
-  @observable expenses = [
-    { title: "potraviny", value: "100" },
-    { title: "struny", value: "300" }
-  ];
+  @observable expenses: IMapEntries<Expense> = new map([
+    { title: "groceries", value: 100, id: "1" },
+    { title: "strings", value: 300, id: "2" }].map(item => [item.id, item]));
 
-  @computed get getExpenses() {
-    return this.expenses.concat([]);
+  addExpense(expense: Expense) {
+    this.expenses.set(expense.id, expense);
   }
 
-  addExpense(expense) {
-    this.expenses.push(expense);
+  removeExpense(id: string): void {
+    this.expenses.delete(id);
   }
 }
 
-const observableExpenseStore = new ObservableExpenseStore();
-export default observableExpenseStore;
+export default ObservableExpenseStore;

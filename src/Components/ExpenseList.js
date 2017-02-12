@@ -11,7 +11,7 @@ class ExpenseList extends Component {
     return (
       <div>
       {
-        store.expenses.map(e=><ExpenseListItem expense={e} onDelete={function(){}} />)
+        store.expenses.values().map(e=><ExpenseListItem key={e.id} expense={e} onDelete={() => store.removeExpense(e.id)} />)
       }
       </div>
     )

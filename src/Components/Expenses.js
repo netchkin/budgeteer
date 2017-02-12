@@ -6,6 +6,7 @@ import ExpenseList from './ExpenseList';
 class Expenses extends Component {
   handleAddExpense = () => {
     this.props.store.addExpense({
+      id: this.refs.txtExpenseDescription.value + this.refs.txtExpenseAmount.value,
       title: this.refs.txtExpenseDescription.value,
       value: this.refs.txtExpenseAmount.value
     });
