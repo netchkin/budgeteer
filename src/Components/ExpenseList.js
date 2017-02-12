@@ -1,3 +1,5 @@
+// @flow
+
 import React, {Component} from 'react';
 import ExpenseListItem from './ExpenseListItem';
 import {observer} from 'mobx-react';
