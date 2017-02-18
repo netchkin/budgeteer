@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import * as React from 'react';
+import {Component} from 'react';
 
 import DevTools from 'mobx-react-devtools';
 
@@ -12,7 +13,7 @@ import ObservableExpenseStore from './Stores/ObservableExpenseStore';
 
 const observableExpenseStore = new ObservableExpenseStore();
 
-class App extends Component {
+class App extends Component<undefined, undefined> {
   render() {
     return (
       <div>
