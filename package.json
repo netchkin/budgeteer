@@ -30,6 +30,8 @@
     "mocha": "^3.2.0",
     "nsp": "2.6.2",
     "source-map-loader": "^0.1.6",
+    "ts-loader": "^2.0.0",
+    "typescript": "^2.1.6",
     "webpack": "^2.2.0",
     "webpack-dev-server": "^2.3.0"
   },
@@ -43,7 +45,6 @@
     "react-router": "^3.0.0"
   },
   "scripts": {
-    "build-ts": "tsc pokus.ts",
     "build": "webpack  --config webpack.config.dev.js",
     "open:src": "webpack-dev-server --config webpack.config.dev.js --watch",
     "lint": "esw webpack.config.* src buildScripts --color",

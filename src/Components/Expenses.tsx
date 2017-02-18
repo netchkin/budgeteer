@@ -8,11 +8,15 @@ export interface ExpensesProps {
 }
 
 class Expenses extends Component<ExpensesProps, undefined> {
-  ctrls : {
+  ctrls: {
     txtPlusOrMinus: HTMLInputElement,
     txtExpenseDescription: HTMLInputElement,
     txtExpenseAmount: HTMLInputElement
-  }
+  } = {
+    txtPlusOrMinus: null,
+    txtExpenseDescription: null,
+    txtExpenseAmount: null
+  };
 
   handleAddExpense = () => {
     this.props.store.addExpense({

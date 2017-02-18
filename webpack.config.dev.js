@@ -4,30 +4,34 @@ const { CheckerPlugin } = require('awesome-typescript-loader');
 
 const outputDir = 'build';
 const config = {
-  
-  entry: path.resolve(__dirname, 'src/index.ts'),
+  resolve: {
+    'extensions': ['.ts', '.tsx', '.js', '.jsx'],
+  },
+  entry: path.resolve(__dirname, 'src/index.tsx'),
   output: {
     path: path.resolve(__dirname, outputDir),
     filename: '[name].js'
   },
-  devtool: 'source-map',
   plugins: [
+    new CheckerPlugin(),
     new HtmlWebpackPlugin({
       title: 'Budgeteer'
-    }),
-    new CheckerPlugin(),
+    })
   ],
+  devtool: 'source-map',
   module: {
     rules: [
       {
-        "test": /\.jsx?$/,
-        "exclude": /node_modules/,
-        "loader": "babel-loader"
+        'test': /\.jsx?$/,
+        'exclude': /node_modules/,
+        'loader': 'babel-loader',
+        'enforce': 'pre'
       },
       {
-        "test": /\.tsx?$/,
-        "exclude": /node_modules/,
-        "loader": "awesome-typescript-loader"
+        'test': /\.tsx?$/,
+        'exclude': /node_modules/,
+        'loader': 'awesome-typescript-loader',
+        'enforce': 'pre'
       }
     ]
   }
