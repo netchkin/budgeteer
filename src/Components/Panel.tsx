@@ -1,6 +1,11 @@
-import React, {Component} from 'react';
+import * as React from 'react';
+import {Component} from 'react';
 
-class Panel extends Component {
+export interface PanelProps {
+
+}
+
+class Panel extends Component<PanelProps, undefined> {
 
   render() {
     const panelStyle = {

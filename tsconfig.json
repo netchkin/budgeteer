@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "removeComments": true,
+        "sourceMap": true,
+        "module": "commonjs",
+        "jsx": "react",
+        "target": "es5",
+        "experimentalDecorators": true
+    },
+    "include": [
+      "./src/**/*"
+    ],
+    "awesomeTypescriptLoaderOptions": {
+        /* ... */
+    }
+}

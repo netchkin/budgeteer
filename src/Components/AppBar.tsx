@@ -1,6 +1,11 @@
-import React, {Component} from 'react';
+import * as React from 'react';
+import {Component} from 'react';
 
-class AppBar extends Component {
+export interface AppBarProps {
+
+}
+
+class AppBar extends Component<AppBarProps, undefined> {
   render() {
     const { children, ...props } = this.props;
     return (

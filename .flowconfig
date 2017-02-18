@@ -1,6 +1,0 @@
-[ignore]
-<PROJECT_ROOT>/node_modules/fbjs/.*
-<PROJECT_ROOT>/build/.*
-
-[options]
-esproposal.decorators=ignore
